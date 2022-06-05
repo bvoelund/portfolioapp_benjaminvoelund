@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAnimation } from "framer-motion";
+import { AnimatePresence, useAnimation, motion } from "framer-motion";
 import { SectionProps } from "../../types/SectionProps";
 import { SiDocker, SiGraphql } from "react-icons/si";
 import { TechCards } from "../collections/TechnologyCardsPrimary";
@@ -11,6 +11,7 @@ import AngularLogo from "../../assets/images/technologies/angular.svg";
 import FirebaseLogo from "../../assets/images/technologies/firebase.svg";
 import PhpLogo from "../../assets/images/technologies/php.svg";
 import TechnologyCircles from "../collections/TechnologyCircles";
+import SectionHeader from "../minor/SectionHeader";
 
 interface TechnologiesProps extends SectionProps {}
 
@@ -33,6 +34,15 @@ const Technologies = ({ sectionRef, inView }: TechnologiesProps) => {
     hidden: { y: -100, opacity: 0 },
   };
 
+  const opacityVariants = {
+    visible: {
+      opacity: 1,
+
+      transition: { duration: 1.2, delay: 0.3 },
+    },
+    hidden: { opacity: 0 },
+  };
+
   // TODO: Move cards to component and map them instead
   //       Collect Card and accordion into one
   return (
@@ -41,14 +51,16 @@ const Technologies = ({ sectionRef, inView }: TechnologiesProps) => {
       className=" dark:bg-[#11162e] bg-[#fff7ed]"
     >
       <div ref={sectionRef} className="mx-2 w-5/6">
-        <h2 className="text-3xl italic pb-8 tracking-wide">
-          Technologies and languages
-        </h2>
-        <p className="pb-4">
-          Below I've listed alot of the technologies that I've come across at
-          both the university and the work place. I've sorted them by how much
-          experience I have with them.
-        </p>
+        <SectionHeader
+          title="Technologies and languages"
+          description={
+            <p className="pb-4">
+              Below I've listed alot of the technologies that I've come across
+              at both the university and the work place. I've sorted them by how
+              much experience I have with them.
+            </p>
+          }
+        />
         <div className="pb-5">
           <h3 className="pb-3 font-bold text-lg">Primary</h3>
           <p className="text-sm">
@@ -57,7 +69,18 @@ const Technologies = ({ sectionRef, inView }: TechnologiesProps) => {
           </p>
         </div>
         <div className=" hidden md:grid xl:grid-cols-3 lg:grid-cols-2 md:grid-rows-3 md:gap-4 mb-5">
-          {TechCards.map((card) => card)}
+          {TechCards.map((card) => (
+            <AnimatePresence>
+              <motion.div
+                variants={opacityVariants}
+                initial="hidden"
+                exit={"visible"}
+                animate={controls}
+              >
+                <div className="col-span-1 row-span-1 h-full">{card}</div>
+              </motion.div>
+            </AnimatePresence>
+          ))}
         </div>
         <div className="md:hidden w-full flex justify-center items-center pb-5">
           <TechnologyAccordionsHandler />

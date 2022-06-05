@@ -52,12 +52,12 @@ const MainContentContainer = ({
             scrollPosition={scrollPosition}
           />
           <img
-            className="hidden dark:block w-full max-h-80 h-56"
+            className="hidden dark:block w-full max-h-80 xl:h-56 h-12"
             src={darkLandingToTechnologies}
             alt="landingToTechnologiesDivider"
           ></img>
           <img
-            className="dark:hidden block w-full max-h-80 h-56"
+            className="dark:hidden block w-full max-h-80 xl:h-56 h-12"
             src={lightLandingToTechnologies}
             alt="landingToTechnologiesDivider"
           ></img>
@@ -66,35 +66,35 @@ const MainContentContainer = ({
 
           <Technologies sectionRef={technologiesRef} inView={inView4} />
           <img
-            className="hidden dark:block w-full max-h-80 h-56"
+            className="hidden dark:block w-full max-h-80 xl:h-56 h-12"
             src={darkTechnologiesToExperience}
             alt="technologiesToExperienceDivider"
           ></img>
           <img
-            className="dark:hidden block w-full max-h-80 h-56 m-0"
+            className="dark:hidden block w-full max-h-80 xl:h-56 h-12"
             src={lightTechnologiesToExperience}
             alt="technologiesToExperienceDivider"
           ></img>
           <Experience sectionRef={experienceRef} inView={inView3} />
           <img
-            className="hidden dark:block w-full max-h-80 h-56"
+            className="hidden dark:block w-full max-h-80 xl:h-56 h-12"
             src={darkExperienceToPersonal}
             alt="experienceToPersonalDivider"
           ></img>
           <img
-            className="dark:hidden block w-full max-h-80 h-56"
+            className="dark:hidden block w-full max-h-80 xl:h-56 h-12"
             src={lightExperienceToPersonal}
             alt="experienceToPersonalDivider"
           ></img>
           <Personal sectionRef={personalRef} inView={inView} />
           {/* <div className="hidden dark:block spacer layer2"></div> */}
           <img
-            className="hidden dark:block w-full max-h-80 h-56"
+            className="hidden dark:block w-full max-h-80 xl:h-56 h-12"
             src={darkPersonalToMyWork}
             alt="personalToWorkDivider"
           ></img>
           <img
-            className="dark:hidden block w-full max-h-80 h-56"
+            className="dark:hidden block w-full max-h-80 xl:h-56 h-12"
             src={lightPersonalToMyWork}
             alt="personalToWorkDivider"
           ></img>

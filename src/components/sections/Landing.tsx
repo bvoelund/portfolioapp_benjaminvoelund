@@ -23,6 +23,8 @@ import { FaHeadset } from "react-icons/fa";
 import { SiCoderwall } from "react-icons/si";
 import { Link } from "react-scroll";
 import TestModal from "../minor/DownloadModal";
+import { GrBottomCorner, GrTopCorner } from "react-icons/gr";
+import LandingIntroTextBlock from "../minor/LandingIntroTextBlock";
 //0d1321
 
 interface LandingProps extends SectionProps {
@@ -118,7 +120,7 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
                     <div className="dark:border-b-white border-b-gray-400 border-b-2 mb-4 pb-4 w-1/2 "></div>
                   </div>
                   <div className="flex justify-center mb-4 md:text-base text-sm ">
-                    <div className="w-4/6 lg:w-full text-center">
+                    <div className="hidden lg:block w-full text-center">
                       <p className="font-semibold">
                         Send me an email or download my resume
                       </p>
@@ -146,59 +148,55 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
                 </div>
               </div>
             </div>
-            <p className="pt-8 font-semibold block md:hidden">
-              Welcome to my portfolio. Feel free to have a look around. I
-              created this project as a fun hobby project to try out some new
-              technologies, and to hopefully inspire myself to create even more
-              spare-time projects in the future.
-            </p>
+
+            <div className="flex md:hidden justify-center items-center flex-col border-t pt-3 border-t-orange-300">
+              <LandingIntroTextBlock />
+            </div>
           </div>
         </div>
         <div className="zero:col-span-2 lg:col-span-1 row-span-1 col-span-1  zero:order-1 lg:order-2 flex justify-center lg:mx-4 mb-10">
-          {/* <div className="transform md:skew-x-12 bg-orange-300 rounded-3xl pt-5 p-5 shadow-2xl"> */}
-          <div className="w-full md:shadow-2xl bg-gradient-to-r from-[#ff7e5f] to-[#feb47b] dark:from-[#43cea2] dark:to-[#185a9d]  h-full rounded-t-3xl rounded-b-md flex justify-center max-h-[515px]">
+          <div
+            className={classNames(
+              loaded ? "opacity-100" : "opacity-0",
+              "transition ease-in-out duration-500 w-full md:shadow-2xl bg-gradient-to-r from-[#ff7e5f] to-[#feb47b] dark:from-[#43cea2] dark:to-[#185a9d]  h-full rounded-t-3xl rounded-b-md flex justify-center max-h-[515px]"
+            )}
+          >
             <img
               src={me}
               className={classNames(
                 loaded
                   ? "translate-y-0 opacity-100"
-                  : "translate-y-14 opacity-0",
-                "transition ease-in-out duration-1000 z-10 pb-0 max-h-[515px] h-full"
+                  : "translate-x-14 opacity-0",
+                "transition ease-in-out duration-1000 delay-150 z-10 pb-0 max-h-[515px] h-full"
               )}
             ></img>
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center lg:w-1/2 w-5/6">
-        <p className="font-semibold md:block hidden">
-          Welcome to my portfolio. Feel free to have a look around. I created
-          this project as a fun hobby project to try out some new technologies,
-          and to hopefully inspire myself to create even more spare-time
-          projects in the future.
-        </p>
-      </div>
+
       <div className="lg:flex justify-between items-center w-5/6 hidden">
         <SiCoderwall
           size={100}
           className="rotate-180 text-orange-400 dark:text-[#43cea2]"
         />
-        {/* <div
-          className={classNames(
-            inView && scrollPosition === 0 ? "opacity-100" : "opacity-0",
-            "transition duration-500 delay-500 ease-in-out flex justify-center items-center mt-8 hover:cursor-pointer"
-          )}
-        ><BiDownArrowAlt size={60} className="animate-bounce" /></div> */}
-        <Link
-          to={"technologies-section"}
-          smooth
-          offset={-110}
-          className={classNames(
-            inView && scrollPosition === 0 ? "opacity-100" : "opacity-0",
-            "transition duration-500 delay-500 ease-in-out flex justify-center items-center mt-8 hover:cursor-pointer"
-          )}
-        >
-          <BiDownArrowAlt size={60} className="animate-bounce" />
-        </Link>
+        <div className="md:flex hidden justify-center items-center lg:w-1/2 w-5/6">
+          <div className="flex flex-col">
+            <div className="flex justify-center items-center flex-col">
+              <LandingIntroTextBlock />
+            </div>
+            <Link
+              to={"technologies-section"}
+              smooth
+              offset={-110}
+              className={classNames(
+                inView && scrollPosition === 0 ? "opacity-100" : "opacity-0",
+                "transition duration-500 delay-500 ease-in-out flex justify-center items-center mt-8 hover:cursor-pointer"
+              )}
+            >
+              <BiDownArrowAlt size={60} className="animate-bounce" />
+            </Link>
+          </div>
+        </div>
 
         <SiCoderwall
           size={100}
