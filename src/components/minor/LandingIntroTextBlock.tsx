@@ -30,8 +30,8 @@ const LandingIntroTextBlock = () => {
         animate={controls}
         ref={introTextRef}
       >
-        <h4 className="text-lg font-semibold pb-2 transition ease-in-out duration-700 delay-500">
-          Welcome to my portfolio! 🙋‍♂️
+        <h4 className="text-lg font-semibold pb-2 transition ease-in-out duration-700 delay-150">
+          Welcome to my portfolio!
         </h4>
         <p className="font-semibold transition ease-in-out duration-700 delay-700">
           Feel free to have a look around. This is a fun little project I did as

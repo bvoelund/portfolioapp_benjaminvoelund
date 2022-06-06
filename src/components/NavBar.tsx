@@ -23,7 +23,7 @@ const NavBar = ({
   setToggleSideBar,
 }: NavBarProps) => {
   return (
-    <nav className="w-screen z-50 sticky shadow-lg top-0 flex flex-col md:flex-row dark:bg-[#111827]  bg-gray-100">
+    <nav className="w-screen z-50 sticky shadow-lg top-0 flex flex-col md:flex-row dark:bg-[#111827] bg-gray-100">
       <div
         className={
           "py-2 flex items-center justify-between opacity-100 w-full dark:border-none transition ease-in-out duration-100"

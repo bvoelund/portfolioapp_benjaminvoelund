@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { AnimatePresence, useAnimation, motion } from "framer-motion";
-import { SectionProps } from "../../types/SectionProps";
 import { SiDocker, SiGraphql } from "react-icons/si";
 import { TechCards } from "../collections/TechnologyCardsPrimary";
 import TechnologyAccordionsHandler from "../collections/TechnologyAccordionsPrimary";
@@ -12,37 +11,11 @@ import FirebaseLogo from "../../assets/images/technologies/firebase.svg";
 import PhpLogo from "../../assets/images/technologies/php.svg";
 import TechnologyCircles from "../collections/TechnologyCircles";
 import SectionHeader from "../minor/SectionHeader";
+import { SectionInterface } from "../../types/sectionInterface";
 
-interface TechnologiesProps extends SectionProps {}
+interface TechnologiesProps extends SectionInterface {}
 
 const Technologies = ({ sectionRef, inView }: TechnologiesProps) => {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  const leftSectionVariants = {
-    visible: {
-      y: 0,
-      opacity: 1,
-
-      transition: { duration: 1 },
-    },
-    hidden: { y: -100, opacity: 0 },
-  };
-
-  const opacityVariants = {
-    visible: {
-      opacity: 1,
-
-      transition: { duration: 1.2, delay: 0.3 },
-    },
-    hidden: { opacity: 0 },
-  };
-
   // TODO: Move cards to component and map them instead
   //       Collect Card and accordion into one
   return (
@@ -69,18 +42,7 @@ const Technologies = ({ sectionRef, inView }: TechnologiesProps) => {
           </p>
         </div>
         <div className=" hidden md:grid xl:grid-cols-3 lg:grid-cols-2 md:grid-rows-3 md:gap-4 mb-5">
-          {TechCards.map((card) => (
-            <AnimatePresence>
-              <motion.div
-                variants={opacityVariants}
-                initial="hidden"
-                exit={"visible"}
-                animate={controls}
-              >
-                <div className="col-span-1 row-span-1 h-full">{card}</div>
-              </motion.div>
-            </AnimatePresence>
-          ))}
+          {TechCards.map((card) => card)}
         </div>
         <div className="md:hidden w-full flex justify-center items-center pb-5">
           <TechnologyAccordionsHandler />

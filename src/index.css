@@ -33,3 +33,11 @@ section {
 ::selection {
   @apply bg-[#f3a183] dark:bg-[#43cea2];
 }
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: repeat(2, auto) repeat(3, 1fr);
+  grid-gap: 10px;
+  height: calc(100vh - 10px);
+}

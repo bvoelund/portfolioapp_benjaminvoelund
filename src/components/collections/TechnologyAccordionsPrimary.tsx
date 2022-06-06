@@ -13,23 +13,6 @@ import {
 import CSharpLogo from "../../assets/images/technologies/c_sharp.svg";
 import CssLogo from "../../assets/images/technologies/css.svg";
 
-// const TechAccordions = [
-//   <TechnologyAccordion
-//     title="React"
-//     children={
-//       <p className="p4">
-//         React is what I primarily use for frontend developing, and also what I
-//         used to create this application. I have used it for various hobby
-//         projects, and in the workplace as well. I find it to be an overall great
-//         library, and it really sparkled my interest in frontend development. I
-//         really only use this in conjuction with TypeScript.
-//       </p>
-//     }
-//     icon={<FaReact color="#61dafb" size={24} />}
-//     isActive
-//   />,
-// ];
-
 const accordions = [
   {
     text: (

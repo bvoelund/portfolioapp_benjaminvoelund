@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import { SectionProps } from "../../types/SectionProps";
-import JyskLogo from "../../assets/images/jysk.png";
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
 import JyskLogoSvg from "../../assets/images/companies/jysk.svg";
 import KamstrupSvg from "../../assets/images/companies/kamstrup.svg";
-import JyskJpg from "../../assets/images/jysk2.jpg";
 import ExperienceCard from "../minor/ExperienceCard";
+import { SectionInterface } from "../../types/sectionInterface";
+import SectionHeader from "../minor/SectionHeader";
 
-interface ExperienceProps extends SectionProps {}
+interface ExperienceProps extends SectionInterface {}
 
 const Experience = ({ sectionRef, inView }: ExperienceProps) => {
   const controls = useAnimation();
@@ -18,37 +17,26 @@ const Experience = ({ sectionRef, inView }: ExperienceProps) => {
     }
   }, [controls, inView]);
 
-  const leftSectionVariants = {
-    visible: {
-      x: 0,
-      opacity: 1,
-
-      transition: { duration: 1 },
-    },
-    hidden: { x: -100, opacity: 0 },
-  };
-
   return (
-    <section id="experience-section" className=" dark:bg-[#0d1321] bg-white">
-      <div className="mb-12 w-5/6">
-        <h2 className="text-3xl italic">Experience</h2>
-        <p className="text-lg">
-          Below I've listed my work experiences, which at the moment is quite
-          limited. Hopefully, it will be expanded widely in the future. Maybe
-          you can help me extend it?
-        </p>
+    <section
+      id="experience-section"
+      className=" dark:bg-[#0d1321] bg-white"
+      ref={sectionRef}
+    >
+      <div className="mb-12 mx-2 w-5/6">
+        <SectionHeader
+          title="Experience"
+          description={
+            <p className="xl:text-lg text-base">
+              Below I've listed my work experiences, which at the moment is
+              quite limited. Hopefully, it will be expanded widely in the
+              future. Maybe you can help me extend it?
+            </p>
+          }
+        />
       </div>
-      <motion.div
-        variants={leftSectionVariants}
-        initial="hidden"
-        animate={controls}
-        ref={sectionRef}
-        transition={{
-          x: { type: "spring", stiffness: 100 },
-          default: { duration: 2 },
-        }}
-        className="grid grid-cols-3 grid-rows-2 xl:grid-rows-1 w-5/6 mb-8 gap-y-12"
-      >
+
+      <div className="grid grid-cols-3 grid-rows-2 xl:grid-rows-1 w-5/6 mb-8 gap-y-12">
         <ExperienceCard
           icon={JyskLogoSvg}
           date="Aug. 2022 - Now"
@@ -66,7 +54,7 @@ const Experience = ({ sectionRef, inView }: ExperienceProps) => {
           This was done with WPF, alongside C# and the Caliburn.Micro framework."
           title="Kamstrup"
         />
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import { Ref } from "react";
 
-export interface SectionProps {
+export interface SectionInterface {
   sectionRef: Ref<HTMLDivElement> | undefined;
   inView: boolean;
 }

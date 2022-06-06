@@ -1,22 +1,13 @@
-import { FaReact } from "react-icons/fa";
 import {
   SiAndroid,
-  SiBootstrap,
-  SiCsharp,
-  SiCss3,
   SiDotnet,
   SiJavascript,
-  SiJest,
   SiMaterialui,
-  SiMongodb,
   SiNodedotjs,
-  SiSass,
-  SiTailwindcss,
-  SiTypescript,
 } from "react-icons/si";
 import TechnologyPill from "../minor/TechnologyPill";
-import JavaLogo from "../../assets/images/technologies/java-logo-1.png";
 import Jest from "../../assets/images/technologies/jest.svg";
+import RTL from "../../assets/images/technologies/rtl.png";
 import DrupalIcon from "../../assets/images/technologies/druplicon-small.png";
 
 export const TechPills = [
@@ -67,5 +58,9 @@ export const TechPills = [
   <TechnologyPill
     header="Jest"
     icon={<img src={Jest} className="w-6 h-6 md:w-8 md:h-8" />}
+  />,
+  <TechnologyPill
+    header="RTL"
+    icon={<img src={RTL} className="w-6 h-6 md:w-8 md:h-8" />}
   />,
 ];

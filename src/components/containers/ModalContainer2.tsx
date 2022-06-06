@@ -58,7 +58,7 @@ const ModalContainer2 = ({
             <div className=" text-black dark:text-white inline-flex flex-col h-full w-5/6 xl:w-4/6 p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-[#111827] shadow-xl rounded-2xl">
               <Dialog.Title
                 as="h1"
-                className="text-3xl font-medium leading-6 border-b pb-4"
+                className="text-xl md:text-3xl font-medium leading-6 border-b pb-4"
               >
                 {title}
                 <div

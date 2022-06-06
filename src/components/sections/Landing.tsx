@@ -15,7 +15,6 @@ import classNames from "classnames";
 import SocialMedias from "../minor/SocialMedias";
 import DownloadResumeButton from "../minor/DownloadResumeButton";
 import CV_BenjaminVoelund_Dansk from "../../assets/documents/cv/CV_BenjaminVoelund_Dansk.pdf";
-import { SectionProps } from "../../types/SectionProps";
 import { useAnimation } from "framer-motion";
 import { BsChevronDoubleDown } from "react-icons/bs";
 import { BiDownArrowAlt } from "react-icons/bi";
@@ -25,9 +24,11 @@ import { Link } from "react-scroll";
 import TestModal from "../minor/DownloadModal";
 import { GrBottomCorner, GrTopCorner } from "react-icons/gr";
 import LandingIntroTextBlock from "../minor/LandingIntroTextBlock";
+import { SectionInterface } from "../../types/sectionInterface";
+import LandingPersonalInfo from "../minor/LandingPersonalInfo";
 //0d1321
 
-interface LandingProps extends SectionProps {
+interface LandingProps extends SectionInterface {
   scrollPosition: number;
 }
 
@@ -40,16 +41,6 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
       controls.start("visible");
     }
   }, [controls, inView]);
-
-  const leftSectionVariants = {
-    visible: {
-      ý: 0,
-      opacity: 1,
-
-      transition: { duration: 1 },
-    },
-    hidden: { y: -100, opacity: 0 },
-  };
 
   useEffect(() => {
     if (showModal) document.body.style.overflow = "hidden";
@@ -64,7 +55,7 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
       <TestModal showModal={showModal} setShowModal={setShowModal} />
       <div
         ref={sectionRef}
-        className="grid grid-cols-2 grid-rows-2 md:grid-rows-1 gap-x-4 w-11/12"
+        className="grid grid-cols-2 gap-x-4 w-11/12 auto-rows-auto lg:mb-10"
       >
         <div
           className={
@@ -74,47 +65,46 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
           }
         >
           <div className="">
-            <div className="grid grid-cols-2 grid-rows-2">
-              <div className="col-span-1 lg:col-span-2 row-span-2 lg:row-span-1">
-                <div className="mb-6">
-                  <div>
-                    <div className="w-full text-left">
-                      <p className="md:text-xl zero:text-base mt-4 border-l-4 zero:pl-2 md:pl-5 border-orange-300 dark:border-sky-300 font-semibold md:mb-8 mb-3">
-                        Software engineer
-                      </p>
-                      <h3 className="text-2xl lg:text-5xl md:text-3xl concert mb-6 whitespace-nowrap">
-                        Benjamin Vølund
-                      </h3>
-                    </div>
-                    <span className="flex items-center mb-4">
-                      <div className="md:p-3 p-1 mr-2 rounded-full dark:from-green-400 dark:to-green-400 bg-gradient-to-r from-[#ff7e5f] to-[#feb47b]">
-                        <ImCheckmark className="fill-white" />
-                      </div>
-                      <p className="md:text-lg text-sm md:italic">
-                        Full stack developer
-                      </p>
-                    </span>
-                    <span className="flex items-center mb-4">
-                      <div className="md:p-3 p-1 mr-2 rounded-full dark:from-green-400 dark:to-green-400 bg-gradient-to-r from-[#ff7e5f] to-[#feb47b]">
-                        <ImCheckmark className="fill-white" />
-                      </div>
-                      <p className="md:text-lg text-sm md:italic">
-                        Recent experience in front development
-                      </p>
-                    </span>
-                    <span className="flex items-center">
-                      <div className="md:p-3 p-1 mr-2 rounded-full dark:from-green-400 dark:to-green-400 bg-gradient-to-r from-[#ff7e5f] to-[#feb47b]">
-                        <ImCheckmark className="fill-white" />
-                      </div>
-                      <p className="md:text-lg text-sm md:italic">
-                        Certified nerd
-                      </p>
-                    </span>
+            <div className="grid grid-cols-2">
+              <div className="col-span-1 lg:col-span-2 ">
+                <div className="flex flex-col mb-6">
+                  <div className="w-full text-left">
+                    <p className="md:text-xl zero:text-base mt-4 border-l-4 zero:pl-2 md:pl-5 border-orange-300 dark:border-sky-300 font-semibold md:mb-8 mb-3">
+                      Software engineer
+                    </p>
+                    <h3 className="text-2xl lg:text-5xl md:text-3xl concert mb-6 whitespace-nowrap">
+                      Benjamin Vølund
+                    </h3>
+                    <LandingPersonalInfo />
                   </div>
+                  <span className="flex items-center mb-4">
+                    <div className="md:p-2 p-1 mr-2 rounded-full dark:from-green-400 dark:to-green-400 bg-gradient-to-r from-[#ff7e5f] to-[#feb47b]">
+                      <ImCheckmark className="fill-white" />
+                    </div>
+                    <p className="md:text-lg text-sm md:italic">
+                      Full stack developer
+                    </p>
+                  </span>
+                  <span className="flex items-center mb-4">
+                    <div className="md:p-2 p-1 mr-2 rounded-full dark:from-green-400 dark:to-green-400 bg-gradient-to-r from-[#ff7e5f] to-[#feb47b]">
+                      <ImCheckmark className="fill-white" />
+                    </div>
+                    <p className="md:text-lg text-sm md:italic">
+                      Recent experience in front development
+                    </p>
+                  </span>
+                  <span className="flex items-center">
+                    <div className="md:p-2 p-1 mr-2 rounded-full dark:from-green-400 dark:to-green-400 bg-gradient-to-r from-[#ff7e5f] to-[#feb47b]">
+                      <ImCheckmark className="fill-white" />
+                    </div>
+                    <p className="md:text-lg text-sm md:italic">
+                      Certified nerd
+                    </p>
+                  </span>
                 </div>
               </div>
-              <div className="col-span-1 lg:col-span-2 row-span-2 lg:row-span-1">
-                <div className="block justify-center items-center py-2">
+              <div className="col-span-1 lg:col-span-2">
+                <div className="block justify-center items-center py-2 pt-28 lg:pt-0">
                   <SocialMedias />
                   <div className="flex justify-center items-center">
                     <div className="dark:border-b-white border-b-gray-400 border-b-2 mb-4 pb-4 w-1/2 "></div>
@@ -148,10 +138,6 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
                 </div>
               </div>
             </div>
-
-            <div className="flex md:hidden justify-center items-center flex-col border-t pt-3 border-t-orange-300">
-              <LandingIntroTextBlock />
-            </div>
           </div>
         </div>
         <div className="zero:col-span-2 lg:col-span-1 row-span-1 col-span-1  zero:order-1 lg:order-2 flex justify-center lg:mx-4 mb-10">
@@ -174,34 +160,42 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
         </div>
       </div>
 
-      <div className="lg:flex justify-between items-center w-5/6 hidden">
-        <SiCoderwall
-          size={100}
-          className="rotate-180 text-orange-400 dark:text-[#43cea2]"
-        />
-        <div className="md:flex hidden justify-center items-center lg:w-1/2 w-5/6">
+      <div className="flex lg:justify-between justify-center items-center w-5/6">
+        <div className="lg:flex hidden">
+          <SiCoderwall
+            size={100}
+            className="rotate-180 text-orange-400 dark:text-[#43cea2]"
+          />
+        </div>
+
+        <div className="flex justify-center items-center lg:w-1/2 w-5/6">
           <div className="flex flex-col">
             <div className="flex justify-center items-center flex-col">
               <LandingIntroTextBlock />
             </div>
-            <Link
-              to={"technologies-section"}
-              smooth
-              offset={-110}
-              className={classNames(
-                inView && scrollPosition === 0 ? "opacity-100" : "opacity-0",
-                "transition duration-500 delay-500 ease-in-out flex justify-center items-center mt-8 hover:cursor-pointer"
-              )}
-            >
-              <BiDownArrowAlt size={60} className="animate-bounce" />
-            </Link>
+            <div className="flex justify-center items-center">
+              <Link
+                to={"technologies-section"}
+                smooth
+                offset={-110}
+                className={classNames(
+                  inView && scrollPosition === 0
+                    ? "opacity-100"
+                    : "opacity-0 invisible",
+                  "transition duration-500 delay-500 ease-in-out mt-8 hover:cursor-pointer w-fit"
+                )}
+              >
+                <BiDownArrowAlt size={60} className="animate-bounce" />
+              </Link>
+            </div>
           </div>
         </div>
-
-        <SiCoderwall
-          size={100}
-          className="text-orange-400 dark:text-[#43cea2]"
-        />
+        <div className="lg:block hidden">
+          <SiCoderwall
+            size={100}
+            className="text-orange-400 dark:text-[#43cea2]"
+          />
+        </div>
       </div>
     </section>
   );
