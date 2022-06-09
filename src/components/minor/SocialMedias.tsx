@@ -24,9 +24,9 @@ const SocialMedias = () => {
   ];
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex flex-col lg:flex-row justify-center items-center">
       {medias.map((m) => (
-        <a className="flex px-1" href={m.href} target="_blank">
+        <a className="flex py-2" href={m.href} target="_blank">
           {m.icon}
         </a>
       ))}

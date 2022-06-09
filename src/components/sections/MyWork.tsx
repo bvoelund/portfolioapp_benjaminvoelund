@@ -9,11 +9,9 @@ import stratbookExampleStrats from "../../assets/images/mywork/bachelor/stratboo
 import portfolio from "../../assets/images/mywork/portfolio/portfolio_dark.png";
 import WorkModal from "../minor/WorkModal";
 import WorkBlock from "../minor/WorkBlock";
-import { BiPen } from "react-icons/bi";
-import { BsCheckLg, BsPen } from "react-icons/bs";
+import { BsCheckLg } from "react-icons/bs";
 import { SectionInterface } from "../../types/sectionInterface";
 import SectionHeader from "../minor/SectionHeader";
-import { flyInFromBottom } from "../../types/transitionVariants";
 import {
   PortfolioTechnologies,
   StratbookTechnologies,
@@ -163,12 +161,5 @@ const MyWork = ({ sectionRef, inView }: PersonalProps) => {
     </section>
   );
 };
-
-// progressText={
-//   <div className="flex items-center">
-//     <p className="italic text-sm py-1 pr-2">In progress</p>
-//     <BsPen size={18} />
-//   </div>
-// }
 
 export default MyWork;

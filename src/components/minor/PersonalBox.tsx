@@ -1,14 +1,14 @@
 import classNames from "classnames";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
-import { MdOutlineFaceUnlock } from "react-icons/md";
 import { useInView } from "react-intersection-observer";
+import { flyInYTransitionType } from "../../types/transitionVariants";
 
 type PersonalBoxProps = {
   text: string | React.ReactNode;
   boxTitle: string | React.ReactNode;
   icon: React.ReactNode;
-  transition: any;
+  transition: flyInYTransitionType;
   className: string;
 };
 

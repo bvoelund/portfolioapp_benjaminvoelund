@@ -28,7 +28,7 @@ function App() {
   return (
     <div
       className={
-        "bg-gradient-to-r from-[#f3a183] to-[#ec6f66] dark:from-[#185a9d] dark:to-[#43cea2]  text-[#111827] dark:text-white transition ease-in-out duration-100 scroll-smooth w-screen cantarell"
+        "w-screen bg-gradient-to-r from-[#ec6f66] to-[#f3a183] dark:from-[#185a9d] dark:to-[#43cea2]  text-[#111827] dark:text-white transition ease-in-out duration-100 scroll-smooth cantarell"
       }
     >
       <ScrollToTopButton scrollPosition={scrollPos} />

@@ -1,15 +1,12 @@
 import classNames from "classnames";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import {
-  flyInFromBottom,
-  flyInFromRight,
-} from "../../types/transitionVariants";
+import { flyInYTransitionType } from "../../types/transitionVariants";
 
 type PersonalImageProps = {
   image: string;
-  transition: any;
+  transition: flyInYTransitionType;
   className: string;
 };
 

@@ -66,7 +66,7 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
         >
           <div className="">
             <div className="grid grid-cols-2">
-              <div className="col-span-1 lg:col-span-2 ">
+              <div className="col-span-1 lg:col-span-2">
                 <div className="flex flex-col mb-6">
                   <div className="w-full text-left">
                     <p className="md:text-xl zero:text-base mt-4 border-l-4 zero:pl-2 md:pl-5 border-orange-300 dark:border-sky-300 font-semibold md:mb-8 mb-3">
@@ -82,7 +82,7 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
                       <ImCheckmark className="fill-white" />
                     </div>
                     <p className="md:text-lg text-sm md:italic">
-                      Full stack developer
+                      Currently working with ReactJS
                     </p>
                   </span>
                   <span className="flex items-center mb-4">
@@ -90,7 +90,7 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
                       <ImCheckmark className="fill-white" />
                     </div>
                     <p className="md:text-lg text-sm md:italic">
-                      Recent experience in front development
+                      Recently finished university
                     </p>
                   </span>
                   <span className="flex items-center">
@@ -98,7 +98,7 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
                       <ImCheckmark className="fill-white" />
                     </div>
                     <p className="md:text-lg text-sm md:italic">
-                      Certified nerd
+                      Nerdy and up for a challenge!
                     </p>
                   </span>
                 </div>
@@ -106,13 +106,10 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
               <div className="col-span-1 lg:col-span-2">
                 <div className="block justify-center items-center py-2 pt-28 lg:pt-0">
                   <SocialMedias />
-                  <div className="flex justify-center items-center">
-                    <div className="dark:border-b-white border-b-gray-400 border-b-2 mb-4 pb-4 w-1/2 "></div>
-                  </div>
                   <div className="flex justify-center mb-4 md:text-base text-sm ">
                     <div className="hidden lg:block w-full text-center">
                       <p className="font-semibold">
-                        Send me an email or download my resume
+                        Contact me or check out my profiles!
                       </p>
                     </div>
                   </div>
@@ -144,7 +141,7 @@ const Landing = ({ sectionRef, inView, scrollPosition }: LandingProps) => {
           <div
             className={classNames(
               loaded ? "opacity-100" : "opacity-0",
-              "transition ease-in-out duration-500 w-full md:shadow-2xl bg-gradient-to-r from-[#ff7e5f] to-[#feb47b] dark:from-[#43cea2] dark:to-[#185a9d]  h-full rounded-t-3xl rounded-b-md flex justify-center max-h-[515px]"
+              "transition ease-in-out duration-500 w-full md:shadow-2xl bg-gradient-to-r from-[#feb47b] to-[#ff7e5f] dark:from-[#43cea2] dark:to-[#185a9d]  h-full rounded-t-3xl rounded-b-md flex justify-center max-h-[515px]"
             )}
           >
             <img

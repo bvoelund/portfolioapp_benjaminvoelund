@@ -1,4 +1,3 @@
-import React from "react";
 import { BsPen } from "react-icons/bs";
 import { GiRetroController } from "react-icons/gi";
 import { MdOutlineFaceUnlock } from "react-icons/md";
@@ -7,7 +6,7 @@ import RubiksCube from "../../assets/images/personal/rubiks1.jpg";
 import Gaming from "../../assets/images/personal/gaming1.jpg";
 import Lego from "../../assets/images/personal/lego.jpg";
 import PersonalImage from "../minor/PersonalImage";
-import { flyInFromLeft, flyInFromRight } from "../../types/transitionVariants";
+import { flyInFromBottom } from "../../types/transitionVariants";
 import getAge from "../../helpers/getAge";
 
 const PersonalBoxes = () => {
@@ -36,12 +35,12 @@ const PersonalBoxes = () => {
             className="-translate-y-3 translate-x-3 text-orange-300 dark:text-[#43cea2]"
           />
         }
-        transition={flyInFromLeft}
+        transition={flyInFromBottom}
         className="order-1"
       />
       <PersonalImage
         image={RubiksCube}
-        transition={flyInFromRight}
+        transition={flyInFromBottom}
         className=" order-2"
       />
       <PersonalBox
@@ -63,12 +62,12 @@ const PersonalBoxes = () => {
             className="rotate-45 -translate-y-6 translate-x-6 text-orange-300 dark:text-[#43cea2]"
           />
         }
-        transition={flyInFromRight}
+        transition={flyInFromBottom}
         className="order-3 xl:order-4"
       />
       <PersonalImage
         image={Gaming}
-        transition={flyInFromLeft}
+        transition={flyInFromBottom}
         className="order-4 xl:order-3"
       />
 
@@ -91,12 +90,12 @@ const PersonalBoxes = () => {
             className="-translate-y-2 translate-x-2 text-orange-300 dark:text-[#43cea2]"
           />
         }
-        transition={flyInFromLeft}
+        transition={flyInFromBottom}
         className="order-5"
       />
       <PersonalImage
         image={Lego}
-        transition={flyInFromRight}
+        transition={flyInFromBottom}
         className="order-6"
       />
     </div>
