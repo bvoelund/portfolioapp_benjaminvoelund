@@ -8,7 +8,7 @@ type SectionHeaderProps = {
 const SectionHeader = ({ title, description }: SectionHeaderProps) => {
   return (
     <>
-      <h2 className="xl:text-5xl text-2xl font-semibold italic pb-8 tracking-wide">
+      <h2 className="xl:text-4xl text-3xl font-semibold pb-8 tracking-wide mt-10">
         {title}
       </h2>
       {description}

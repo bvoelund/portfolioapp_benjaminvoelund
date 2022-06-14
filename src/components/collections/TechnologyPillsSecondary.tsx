@@ -5,7 +5,7 @@ import {
   SiMaterialui,
   SiNodedotjs,
 } from "react-icons/si";
-import TechnologyPill from "../minor/TechnologyPill";
+import TechnologyPill from "../minor/Technologies/TechnologyPill";
 import Jest from "../../assets/images/technologies/jest.svg";
 import RTL from "../../assets/images/technologies/rtl.png";
 import DrupalIcon from "../../assets/images/technologies/druplicon-small.png";

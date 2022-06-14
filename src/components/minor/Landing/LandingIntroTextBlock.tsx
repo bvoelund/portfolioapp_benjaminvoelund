@@ -30,8 +30,12 @@ const LandingIntroTextBlock = () => {
         animate={controls}
         ref={introTextRef}
       >
-        <h4 className="text-lg font-semibold pb-2">Welcome to my portfolio!</h4>
-        <p className="font-semibold">
+        <div className={inView ? "block" : "hidden"}>
+          <div className="typing-animation-intro w-[22ch] whitespace-nowrap overflow-hidden pb-2 font-semibold md:text-lg">
+            Welcome to my portfolio! 🙋‍♂️
+          </div>
+        </div>
+        <p className="font-semibold md:text-base text-sm">
           Feel free to have a look around. Below you can read about my prefered
           technologies, my working experience, me as a person and my spare time
           projects. Feel free to contact me or checkout some of my projects.

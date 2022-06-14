@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { flyInYTransitionType } from "../../types/transitionVariants";
+import { flyInYTransitionType } from "../../../types/transitionVariants";
 
 type PersonalBoxProps = {
   text: string | React.ReactNode;

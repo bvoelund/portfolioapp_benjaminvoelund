@@ -6,7 +6,6 @@ import dkFlag from "../../assets/images/personal/denmark.png";
 import ukFlag from "../../assets/images/personal/english.svg";
 import CV_BenjaminVoelund_Dansk from "../../assets/documents/cv/CV_BenjaminVoelund_Dansk.pdf";
 import ModalContainer from "../containers/ModalContainer";
-import ModalContainer2 from "../containers/ModalContainer2";
 
 type TestModalType = {
   showModal: boolean;
@@ -15,7 +14,7 @@ type TestModalType = {
 
 export default function TestModal({ showModal, setShowModal }: TestModalType) {
   return (
-    <ModalContainer2
+    <ModalContainer
       title="Download my resume"
       showModal={showModal}
       setShowModal={setShowModal}
@@ -53,6 +52,6 @@ export default function TestModal({ showModal, setShowModal }: TestModalType) {
           </a>
         </div>
       </div>
-    </ModalContainer2>
+    </ModalContainer>
   );
 }

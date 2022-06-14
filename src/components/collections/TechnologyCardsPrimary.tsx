@@ -10,7 +10,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import TechnologiesCardMain from "../minor/TechnologiesCardMain";
+import TechnologiesCardMain from "../minor/Technologies/TechnologiesCardMain";
 import CSharpLogo from "../../assets/images/technologies/c_sharp.svg";
 import CssLogo from "../../assets/images/technologies/css.svg";
 

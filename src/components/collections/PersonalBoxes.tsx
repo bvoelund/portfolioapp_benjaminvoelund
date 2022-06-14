@@ -1,11 +1,11 @@
 import { BsPen } from "react-icons/bs";
 import { GiRetroController } from "react-icons/gi";
 import { MdOutlineFaceUnlock } from "react-icons/md";
-import PersonalBox from "../minor/PersonalBox";
+import PersonalBox from "../minor/Personal/PersonalBox";
 import RubiksCube from "../../assets/images/personal/rubiks1.jpg";
 import Gaming from "../../assets/images/personal/gaming1.jpg";
 import Lego from "../../assets/images/personal/lego.jpg";
-import PersonalImage from "../minor/PersonalImage";
+import PersonalImage from "../minor/Personal/PersonalImage";
 import { flyInFromBottom } from "../../types/transitionVariants";
 import getAge from "../../helpers/getAge";
 

@@ -1,37 +1,31 @@
 import { MdOpenInNew } from "react-icons/md";
-import ModalContainer2 from "../containers/ModalContainer2";
+import ModalContainer from "../../containers/ModalContainer";
+import ModalContainer2 from "../../containers/ModalContainer";
+import { WorkModalDataType } from "../../sections/MyWork";
 
 type WorkModalType = {
   showModal: boolean;
   setShowModal: (state: boolean) => void;
-  title: string;
-  text: React.ReactNode;
-  images: string[];
-  usedTechnologies: React.ReactNode;
-  externalLink: string;
+  modalData: WorkModalDataType;
 };
 
 export default function WorkModal({
   showModal,
   setShowModal,
-  title,
-  text,
-  images,
-  usedTechnologies,
-  externalLink,
+  modalData,
 }: WorkModalType) {
   return (
-    <ModalContainer2
-      title={title}
+    <ModalContainer
+      title={modalData?.modalTitle}
       showModal={showModal}
       setShowModal={setShowModal}
     >
       <div className="flex justify-center">
         <div className="md:w-5/6">
-          {externalLink.length > 0 && (
+          {modalData?.externalLink && modalData?.externalLink?.length > 0 && (
             <a
               target="_blank"
-              href={externalLink}
+              href={modalData.externalLink}
               className=" underline inline-block decoration-orange-400 dark:decoration-[#43cea2] outline-none"
             >
               <div className="flex items-center text-orange-400 dark:text-[#43cea2]">
@@ -41,17 +35,22 @@ export default function WorkModal({
             </a>
           )}
 
-          <img src={images[0]} className="pt-4 md:min-h-[400px]" />
+          <img
+            src={modalData?.modalImages[0]}
+            className="pt-4 md:min-h-[400px]"
+          />
 
-          <div className="my-2 flex-grow">{text}</div>
+          <div className="my-2 flex-grow">{modalData?.modalText}</div>
           <h3 className="text-xl py-2">Technologies used:</h3>
           <div className="flex flex-col md:flex-row justify-start md:space-x-4 pb-2">
-            {usedTechnologies}
+            {modalData?.usedTechnologies}
           </div>
-          {images[1] && <img src={images[1]} className="pb-4" />}
-          {images[2] && <img src={images[2]} />}
+          {modalData?.modalImages[1] && (
+            <img src={modalData.modalImages[1]} className="pb-4" />
+          )}
+          {modalData?.modalImages[2] && <img src={modalData.modalImages[2]} />}
         </div>
       </div>
-    </ModalContainer2>
+    </ModalContainer>
   );
 }

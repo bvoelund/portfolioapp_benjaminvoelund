@@ -11,7 +11,7 @@ import {
 import konva from "../../assets/images/mywork/bachelor/konva.png";
 import jwt from "../../assets/images/mywork/bachelor/jwt.svg";
 import cSharp from "../../assets/images/technologies/c_sharp.svg";
-import TechnologyUsed from "../minor/TechnologyUsed";
+import TechnologyUsed from "../minor/Technologies/TechnologyUsed";
 
 export const StratbookTechnologies = () => {
   return (
@@ -21,7 +21,11 @@ export const StratbookTechnologies = () => {
         text={<p className="pl-2">React</p>}
       />
       <TechnologyUsed
-        icon={<SiTypescript color="#3178c6" size={32} />}
+        icon={
+          <div className="bg-white rounded-xl w-fit">
+            <SiTypescript color="#3178c6" size={32} />
+          </div>
+        }
         text={<p className="pl-2">TypeScript</p>}
       />
       <TechnologyUsed
@@ -67,7 +71,11 @@ export const PortfolioTechnologies = () => {
         text={<p className="pl-2">TailwindCss</p>}
       />
       <TechnologyUsed
-        icon={<SiTypescript color="#3178c6" size={32} />}
+        icon={
+          <div className="bg-white rounded-xl w-fit">
+            <SiTypescript color="#3178c6" size={32} />
+          </div>
+        }
         text={<p className="pl-2">TypeScript</p>}
       />
     </>

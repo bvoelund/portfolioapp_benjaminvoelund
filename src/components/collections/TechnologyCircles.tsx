@@ -1,12 +1,12 @@
 import { FaReact } from "react-icons/fa";
-import TechnologyAccordion from "../minor/TechnologyAccordion";
+import TechnologyAccordion from "../minor/Technologies/TechnologyAccordion";
 import React, { useMemo, useState } from "react";
 import CPlusPlusLogo from "../../assets/images/technologies/c_plus_plus.svg";
 import AngularLogo from "../../assets/images/technologies/angular.svg";
 import FirebaseLogo from "../../assets/images/technologies/firebase.svg";
 import PhpLogo from "../../assets/images/technologies/php.svg";
 import { SiDocker, SiGraphql, SiHeroku } from "react-icons/si";
-import TechnologyCircle from "../minor/TechnologyCircle";
+import TechnologyCircle from "../minor/Technologies/TechnologyCircle";
 
 const circles = [
   <TechnologyCircle

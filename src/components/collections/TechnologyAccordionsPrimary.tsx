@@ -1,5 +1,5 @@
 import { FaReact } from "react-icons/fa";
-import TechnologyAccordion from "../minor/TechnologyAccordion";
+import TechnologyAccordion from "../minor/Technologies/TechnologyAccordion";
 import React, { useMemo, useState } from "react";
 import {
   SiBootstrap,

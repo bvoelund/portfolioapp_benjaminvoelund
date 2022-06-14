@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { opacityVariants } from "../../types/transitionVariants";
+import { opacityVariants } from "../../../types/transitionVariants";
 
 export type TechnologiesCardMainProps = {
   children: React.ReactNode;

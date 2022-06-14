@@ -2,11 +2,11 @@ import classNames from "classnames";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { opacityVariants } from "../../types/transitionVariants";
+import { opacityVariants } from "../../../types/transitionVariants";
 
 type ExperiencecardType = {
   icon: string;
-  text: string;
+  text: React.ReactNode;
   title: string;
   position: string;
   date: string;
@@ -35,9 +35,9 @@ const ExperienceCard = ({
         exit={"visible"}
         animate={controls}
         ref={experienceCardRef}
-        className="col-span-3 row-span-1 xl:col-span-1 transition duration-300 ease-in-out shadow-xl rounded-xl bg-gradient-to-t p-[3px] dark:from-[#43cea2] dark:to-[#185a9d] from-[#ff7e5f] to-[#feb47b] mx-2 h-full"
+        className="hover:scale-110 col-span-3 row-span-1 xl:col-span-1 transition duration-300 ease-in-out shadow-xl rounded-xl bg-gradient-to-t p-[3px] dark:from-[#43cea2] dark:to-[#185a9d] from-[#ff7e5f] to-[#feb47b] mx-2 h-full"
       >
-        <div className="relative dark:bg-[#0d1321] bg-white rounded-lg h-full w-full p-2">
+        <div className=" relative dark:bg-[#0d1321] bg-white rounded-lg h-full w-full p-2">
           <div className="flex justify-center -translate-y-12">
             <div className="flex justify-center items-center  rounded-full dark:bg-[#185a9d] bg-[#feb47b] p-[3px]  w-20 h-20">
               <div className="dark:bg-[#0d1321] bg-white rounded-full p-2 w-full h-full flex justify-center items-center">

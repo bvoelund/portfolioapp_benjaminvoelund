@@ -28,6 +28,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 400px;
 }
 
 ::selection {
@@ -40,4 +41,26 @@ section {
   grid-template-rows: repeat(2, auto) repeat(3, 1fr);
   grid-gap: 10px;
   height: calc(100vh - 10px);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Props to Marko --> https://codepen.io/denic/pen/GRoOxbM */
+.typing-animation-intro {
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  border-right: 3px solid;
+}
+.typing-animation-footer {
+  animation: typing 2s steps(20), blink 0.5s step-end infinite alternate;
+  border-right: 3px solid;
 }

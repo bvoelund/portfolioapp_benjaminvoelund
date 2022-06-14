@@ -1,23 +1,18 @@
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { flyInFromBottom } from "../../types/transitionVariants";
+import { flyInFromBottom } from "../../../types/transitionVariants";
+import { WorkModalDataType } from "../../sections/MyWork";
 
 type WorkBlockProps = {
   progressText: React.ReactNode;
+  modalData: WorkModalDataType;
+  setModalData: (modalData: WorkModalDataType) => void;
   blockText?: string;
   images: string[];
   showWorkModal: boolean;
   setShowWorkModal: (toggle: boolean) => void;
-  setModalImages: (images: string[]) => void;
   modalTitle: string;
-  setModalTitle: (title: string) => void;
-  modalText: string | React.ReactNode;
-  setModalText: (text: React.ReactNode) => void;
-  setUsedTechnologies: (state: React.ReactNode) => void;
-  usedTechnologies: React.ReactNode;
-  externalLink: string;
-  setExternalLink: (link: string) => void;
 };
 
 const WorkBlock = ({
@@ -26,15 +21,9 @@ const WorkBlock = ({
   images,
   showWorkModal,
   setShowWorkModal,
-  setModalImages,
   modalTitle,
-  setModalTitle,
-  modalText,
-  setModalText,
-  setUsedTechnologies,
-  usedTechnologies,
-  externalLink,
-  setExternalLink,
+  modalData,
+  setModalData,
 }: WorkBlockProps) => {
   const controls = useAnimation();
   const [blockRef, inView] = useInView();
@@ -54,7 +43,7 @@ const WorkBlock = ({
         <div>
           {/* Extend transtition */}
           <div className="transition-all ease-out duration-500 transform opacity-100 translate-y-0">
-            <h1 className="text-3xl font-medium leading-tight tracking-wide md:text-5xl">
+            <h1 className="text-2xl font-semibold leading-tight tracking-wide">
               {modalTitle}
             </h1>
           </div>
@@ -68,11 +57,7 @@ const WorkBlock = ({
                 className="ml-1 underline text-[#f3a183] dark:text-[#43cea2] cursor-pointer whitespace-nowrap"
                 onClick={() => {
                   setShowWorkModal(!showWorkModal);
-                  setModalImages(images);
-                  setModalTitle(modalTitle);
-                  setModalText(modalText);
-                  setUsedTechnologies(usedTechnologies);
-                  setExternalLink(externalLink);
+                  setModalData(modalData);
                 }}
               >
                 Read more

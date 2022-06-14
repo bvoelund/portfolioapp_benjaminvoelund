@@ -2,7 +2,7 @@ import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { FaReact } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import { opacityVariants } from "../../types/transitionVariants";
+import { opacityVariants } from "../../../types/transitionVariants";
 
 type TechnologyPillType = {
   icon: React.ReactNode;

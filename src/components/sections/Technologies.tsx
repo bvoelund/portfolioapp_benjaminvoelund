@@ -4,7 +4,7 @@ import { SiDocker, SiGraphql } from "react-icons/si";
 import { TechCards } from "../collections/TechnologyCardsPrimary";
 import TechnologyAccordionsHandler from "../collections/TechnologyAccordionsPrimary";
 import { TechPills } from "../collections/TechnologyPillsSecondary";
-import TechnologyCircle from "../minor/TechnologyCircle";
+import TechnologyCircle from "../minor/Technologies/TechnologyCircle";
 import CPlusPlusLogo from "../../assets/images/technologies/c_plus_plus.svg";
 import AngularLogo from "../../assets/images/technologies/angular.svg";
 import FirebaseLogo from "../../assets/images/technologies/firebase.svg";
